@@ -48,6 +48,41 @@ function checkingPalindrome(str) {
 let checkPalindrome = "madam";
 console.log(checkingPalindrome(checkPalindrome));
 
+// 5.Question: Print all even numbers between 1 and 20 using a while loop
+
+var number = 2; 
+
+while (number <= 20) {
+    console.log(number);
+    number += 2;
+}
+console.log("-----------------------------")
+// 6.Question: Iterate through the properties of an object using a for-in loop
+
+let object = {
+  carName : "Audi",
+  carModel : 2020,
+  carDoors : 4,
+}
+for(let key in object){
+  console.log(key + ": " + object[key]);
+}
+
+console.log("-----------------------------")
+// 7.Question: Check if a number is even or odd and return a corresponding message.
+// using a ternary operator here for a more concise syntax.
+
+function checkEvenOrOdd(number) {
+  return number % 2 === 0 ? "This number is even" : "This number is odd";
+}
+let input1 = 4;
+let input2 = 3;
+let result1 = checkEvenOrOdd(input1);
+let result2 = checkEvenOrOdd(input2); 
+
+console.log(result1)
+console.log(result2)
+console.log("-----------------------------")
 // making an object
 const obj = {
   name : "sami",
@@ -112,3 +147,5 @@ delete myDog.tails;
 console.log(myDog.tails)
 
 console.log("-----------------------------")
+
+
