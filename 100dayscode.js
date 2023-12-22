@@ -83,6 +83,42 @@ let result2 = checkEvenOrOdd(input2);
 console.log(result1)
 console.log(result2)
 console.log("-----------------------------")
+// 8.Question: Find the maximum of three numbers using nested ternary operators
+function findMax(a, b, c) {
+  return a > b ? (a > c ? a : c) : (b > c ? b : c);
+}
+
+const maxNum = findMax(22, 35, 18);
+console.log(maxNum);
+console.log("-----------------------------")
+
+// 9. Question: Find the sum of all positive numbers in an array.
+
+function sumOfPositiveNum(arr){
+  let sumPostive = 0;
+  for(let i = 0; i < arr.length; i++){
+    if (arr[i] > 0) {
+      sumPostive += arr[i];
+    }
+  }
+  return sumPostive;
+}
+let numbers = [1, -4, 3, -9]
+let sumNumResult = sumOfPositiveNum(numbers);
+console.log("Sum of positive numbers: " + sumNumResult);
+console.log("-----------------------------")
+
+// 10. Question: Find the index of the first occurrence of a specific element in an array.
+function findTheIndexOf(arr, target) {
+  const index = arr.indexOf(target)
+  return index;
+}  
+let arr = [10, 30, 40, 50]
+let indexOfArr = 50;
+let indexResult = findTheIndexOf(arr, indexOfArr);
+console.log(`The index of the first occurrence of ${indexOfArr} is: ${indexResult}`)
+console.log("-----------------------------")
+
 // making an object
 const obj = {
   name : "sami",
