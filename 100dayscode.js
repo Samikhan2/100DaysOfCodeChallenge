@@ -118,7 +118,22 @@ let indexOfArr = 50;
 let indexResult = findTheIndexOf(arr, indexOfArr);
 console.log(`The index of the first occurrence of ${indexOfArr} is: ${indexResult}`)
 console.log("-----------------------------")
+// 11. Question: Remove all duplicates from an array without built-in methods.
 
+function removeDuplicate(arr) {
+  let duplicateElements = [];
+  for(let item of arr){
+    if (!duplicateElements.includes(item)) {
+      duplicateElements.push(item);
+    }
+  } 
+  return duplicateElements;
+}
+const duplicateArray = [1, 1, 2, 2, 3, 3, 4, 4, 6, 6];
+const uniqueArray = removeDuplicate(duplicateArray);
+console.log(`This is the original array: ${duplicateArray}`);
+console.log(`Array with duplicates removed: ${uniqueArray}`)
+console.log("-----------------------------")
 // making an object
 const obj = {
   name : "sami",
