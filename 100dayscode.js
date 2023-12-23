@@ -134,6 +134,34 @@ const uniqueArray = removeDuplicate(duplicateArray);
 console.log(`This is the original array: ${duplicateArray}`);
 console.log(`Array with duplicates removed: ${uniqueArray}`)
 console.log("-----------------------------")
+// 12. Question: Calculate the factorial of a number using a do-while loop.
+
+let originalArray = [1,2,4,7,8,9];
+let doubledArray = [];
+for(let element of originalArray){
+  doubledArray.push(element * 2)
+}
+
+console.log(`This is the original array: ${originalArray}`);
+console.log(`This is the doubled array: ${doubledArray}`);
+console.log("-----------------------------")
+// 13. Question: Sort the array in ascending and descending without built-in methods.
+
+let att = [1,2,3,4,5];
+console.log("Ascending order");
+for (let i = att.length - 1; i>= 0; i--) {
+  const element = att[i];
+  console.log(element);
+  
+}
+
+console.log("Descending order");
+for (let i = 0; i < att.length; i++) {
+  const element = att[i];
+  console.log(element);
+}
+console.log("-----------------------------")
+
 // making an object
 const obj = {
   name : "sami",
