@@ -20,8 +20,8 @@ function countVowels(str){
     return vowels ? vowels.length : 0;
 }
 let inputStrings = "hello world!";
-let result = countVowels(inputStrings);
-console.log("Number of vowels ",result );
+let vowelsResult = countVowels(inputStrings);
+console.log("Number of vowels ",vowelsResult );
 console.log("-----------------------------")
 
 // 3. Question: Convert the first letter of each word in a sentence to uppercase.
@@ -103,8 +103,8 @@ function sumOfPositiveNum(arr){
   }
   return sumPostive;
 }
-let numbers = [1, -4, 3, -9]
-let sumNumResult = sumOfPositiveNum(numbers);
+let numbers1 = [1, -4, 3, -9]
+let sumNumResult = sumOfPositiveNum(numbers1);
 console.log("Sum of positive numbers: " + sumNumResult);
 console.log("-----------------------------")
 
@@ -113,9 +113,9 @@ function findTheIndexOf(arr, target) {
   const index = arr.indexOf(target)
   return index;
 }  
-let arr = [10, 30, 40, 50]
+let arr1 = [10, 30, 40, 50]
 let indexOfArr = 50;
-let indexResult = findTheIndexOf(arr, indexOfArr);
+let indexResult = findTheIndexOf(arr1, indexOfArr);
 console.log(`The index of the first occurrence of ${indexOfArr} is: ${indexResult}`)
 console.log("-----------------------------")
 // 11. Question: Remove all duplicates from an array without built-in methods.
