@@ -162,7 +162,7 @@ for (let i = 0; i < att.length; i++) {
 }
 console.log("-----------------------------")
 
-// making an object
+// 14. making an object
 const obj = {
   name : "sami",
   lastName : "khan",
@@ -171,7 +171,7 @@ const obj = {
 console.log("My Name is " + obj.name + obj.lastName + " and my hobbies are " + obj.hobby[0] + " and " + obj.hobby[1])
 
 console.log("-----------------------------")
-// acessing object properties using Dot notation
+// 15. acessing object properties using Dot notation
 const cat = {
   name : "Whiskers",
   legs : 4,
@@ -184,7 +184,7 @@ console.log(catName)
 console.log(catEnemies)
 
 console.log("-----------------------------")
-// acessing object properties using Bracket notation
+// 16. acessing object properties using Bracket notation
 
 const testObj = {
   "an entree": "hamburger",
@@ -199,7 +199,7 @@ console.log(drinkValue)
 
 
 console.log("-----------------------------")
-//   Updating Object Properties
+// 17. Updating Object Properties
 
 const myDog = {
   name : "Coder",
@@ -220,11 +220,159 @@ myDog.barks = "woof!"
 console.log("my dog " + myDog.barks)
 
 console.log("-----------------------------")
-// Delete Properties from myDogs Object
+// 18. Delete Properties from myDogs Object
 
 delete myDog.tails;
 console.log(myDog.tails)
 
 console.log("-----------------------------")
 
+// 19. Rewrite the following code using a ternary operator:
+// let result;
+// if (score >= 80) {
+//     result = "Pass";
+// } else {
+//     result = "Fail";
+// }
+
+let result;
+let score = 20;
+score >= 70 ? result = "pass" : result = "fail"
+console.log(result);
+
+console.log("-------------------------------------");
+// 20. How does the optional chaining operator (?.) work,
+// and how can it be used to access nested properties of an object?
+
+let user = {
+    name: "sami",
+    address: {
+        country: "pakistan",
+        city: "karachi"
+    },
+    contact: {
+        email: "Sami4678kh@gmail.com",
+        phone: 92023129384058
+    }
+}
+// acessing nested properties without optional chaining operator
+console.log(user.address);
+console.log(user.address.country);
+// acessing nested properties with optional chaining operator
+console.log(user?.address?.city);
+console.log(user?.contact?.city);
+console.log(user?.address?.email);
+
+console.log("-------------------------------------");
+// 21. Compare the for...in loop and the for...of loop in terms of their use cases and the types of values they iterate over.
+
+// for in loop loops through the properties of an object
+let forObject = {
+    carname: "audi a5",
+    model: "2018",
+    power: "252hp",
+    body: "hatchback",
+    doors: 5,
+    seats: 5
+}
+for (let key in forObject) {
+    console.log(key + ":" + forObject[key]);
+}
+
+console.log("-------------------------------------");
+// for of loop loops through the value of an iterable objects like an array or strings
+
+let str = "Hello World!"
+for (const value of str) {
+    console.log(value);
+}
+
+let arr = [1, 2, 4, 5, 6, 8, 8]
+for (const value of arr) {
+    console.log(value);
+}
+
+console.log("-------------------------------------");
+// 22. Define a function calculateAverage that takes an array of numbers as an argument and returns the average value.
+function calculateAverage(numbers) {
+    if (numbers.length === 0) {
+        return 0;
+    }
+    let sum = 0;
+    for (let i = 0; i < numbers.length; i++) {
+        sum += numbers[i]
+    }
+    const average = sum / numbers.length;
+    return average;
+}
+
+let numberArray = [10, 34, 54, 76, 8, 5, 3]
+let calculatedAverage = calculateAverage(numberArray)
+
+console.log("The average value of array is: " + calculatedAverage);
+console.log("-------------------------------------");
+
+// 23. Create an object named student with properties name, age, and grades. Add a method calculateAverage that calculates the average of the grades.
+let student = {
+    name: "sami",
+    age: 17,
+    grades: {
+        english: 45,
+        urdu: 56,
+        maths: 36,
+        history: 75,
+        physics: 75
+    },
+    calculatedStdAverage() {
+        let gradesArray = Object.values(this.grades);
+        let sum = 0;
+        
+        for (let i = 0; i < gradesArray.length; i++) {
+            sum += gradesArray[i];
+        }
+        
+        if (gradesArray.length === 0) {
+            return 0;
+        }
+        
+        let stdGradeAverage = sum / gradesArray.length;
+        return stdGradeAverage;
+    }
+};
+
+function studentInformation() {
+    let studentInfo = [student.name, student.age, student.grades];
+    console.log(`The name of the student is ${studentInfo[0]} and the age is ${studentInfo[1]}`);
+    console.log("Student grades:");
+    for (let key in student.grades) {
+        console.log(`${key}: ${student.grades[key]}`);
+    }
+    console.log(`The average of the student grades is: ${student.calculatedStdAverage()}`);
+}
+studentInformation();
+console.log("-------------------------------------");
+
+// 24. Explain the concept of "closures" in JavaScript and provide an example of their practical use.
+
+function outerFunction() {
+    let outerVariable = "this is the outer function"
+    function innerFucntion() {
+        console.log(outerVariable);
+    }
+    return outerVariable;
+}
+let closureExample = outerFunction();
+console.log(closureExample);
+console.log("-------------------------------------");
+
+
+// 25. Write a loop that iterates over an array of numbers and logs whether each number is even or odd,
+// using a ternary operator.
+
+let numbers = [1,2,3,4,7,6,7,9]
+for (let i = 0; i < numbers.length; i++) {
+    const result = (numbers[i] % 2 === 0 ) ? "even" : "odd"
+    console.log(`${numbers[i]} is ${result}`);
+}
+console.log("-------------------------------------");
 
