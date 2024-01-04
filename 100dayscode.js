@@ -369,10 +369,188 @@ console.log("-------------------------------------");
 // 25. Write a loop that iterates over an array of numbers and logs whether each number is even or odd,
 // using a ternary operator.
 
+let evenAndOddNumbers = [1,2,3,4,7,6,7,9]
+for (let i = 0; i < evenAndOddNumbers.length; i++) {
+    const result = (evenAndOddNumbers[i] % 2 === 0 ) ? "even" : "odd"
+    console.log(`${evenAndOddNumbers[i]} is ${result}`);
+}
+console.log("-------------------------------------");
+
+
+
+
+// 26. Write a loop that iterates over an array of numbers and logs whether each number is even or odd,
+// using a ternary operator.
+
 let numbers = [1,2,3,4,7,6,7,9]
 for (let i = 0; i < numbers.length; i++) {
     const result = (numbers[i] % 2 === 0 ) ? "even" : "odd"
     console.log(`${numbers[i]} is ${result}`);
 }
 console.log("-------------------------------------");
+// 27. Create an object car with properties make, model, and a method startEngine that logs a message.
+// Instantiate the object and call the method.
+let car = {
+    make : "BMW",
+    model : "2020",
+    startEngine(){
+        let message = "Engine Started!"
+        return message;
+    }
+}
+console.log(car.startEngine());
+console.log("-------------------------------------");
 
+// 28. Write a function calculateTax that calculates and returns the tax amount based on a given income.
+// Use a ternary operator to determine the tax rate.
+
+function calculateTax(income) {
+    let taxRate = income >= 50000 ? 0.2 : income >= 20000 ? 0.1 : 0;
+    return income * taxRate;
+    
+}
+let income = 35000
+console.log(calculateTax(income));
+console.log("-------------------------------------");
+
+// 29. Write a for...in loop that iterates over the properties of an object and logs each property name and value.
+
+let obj1 = {
+    name : "sami",
+    age : 18,
+    email : "Sami4678kh@gmail.com",
+    course : "Web Development",
+    payment : true
+}
+for (let key in obj1){
+    console.log(key + ":" + obj1[key]);
+}
+console.log("-------------------------------------");
+// 30. Provide an example of using optional chaining within a loop to access a potentially missing property of an object.
+
+let info = [
+    {name: "shujat" , address : {city: "karachi", country: "Pakistan"}},
+    {name: "sami" , address : {city: "karachi"}}
+]
+
+for(let keys of info) {
+    let country = keys?.address?.country || "Unknown"
+    console.log(`The user name is ${keys.name} and his country is ${country}`);
+}
+console.log("-------------------------------------");
+// 31. *Map Transformation:*
+//    - Q: Given an array of integers, use the map method to square each element and return a new array with the squared values.
+let arrOfInt = [2,3,4,6,8,3,2]
+let squaredArr = arrOfInt.map(arr => arr * arr );
+console.log(squaredArr);
+
+console.log("-------------------------------------");
+// 32. *Filter and Map Combination:*
+//    - Q: Take an array of strings, filter out the ones with a length less than 5, and then capitalize the remaining strings using the map method.
+let arrOfStr = ["hello", "world" ,"javascript","cake","banana"]
+let filterAndMapStr = arrOfStr.filter(str => str.length <= 5).map(str => str.toUpperCase());
+console.log(filterAndMapStr);
+
+console.log("-------------------------------------");
+// 33. *Sorting Objects:*
+//    - Q: Given an array of objects with a 'price' property, use the sort method to arrange them in descending order based on their prices.
+let productPricing = [{name : "Glasses", price : 500}, {name: "Watch", price: 2000}, {name: "Bracelet", price: 200},{name: "Ring", price: 150}];
+let descendingProduct = [...productPricing].sort((a,b) => {return b.price - a.price})
+console.log(descendingProduct);
+console.log(productPricing);
+
+console.log("-------------------------------------");
+// 34. *Reduce for Aggregation:*
+//    - Q: Use the reduce method to find the total sum of all even numbers in an array of integers.
+let arrOfEven = [2,3,4,5,8,3,9,8];
+let sumOfEven = arrOfEven.reduce((acc,cur) => { return cur % 2 === 0 ? acc + cur : acc},0)
+console.log(`${sumOfEven} is the sum of even number`);
+
+
+console.log("-------------------------------------");
+// 35. *Find and Modify:*
+//    - Q: Given an array of objects with 'id' properties, use the find method to locate an object with a specific 'id' and update its 'status' property to 'completed'.
+let courses = [
+  {id: 45,name:"Mudassir",courseName: "ContentWriting", status:"in-progress"},
+  {id: 34,name:"Ali",courseName: "GraphicDesign", status:"in-progress"},
+  {id: 22,name:"Ahmed",courseName: "WebDevelopment", status:"in-progress"},
+  {id: 56,name:"Huazifa",courseName: "DigitalMarketing", status:"in-progress"}
+]
+let idToTarget = 45;
+let foundObject = courses.find(obj => obj.id == idToTarget);
+(foundObject) ? (foundObject.status = "completed", 
+console.log(`Object with ${idToTarget} found and status has been updated:`)): 
+console.log(`Object with ${idToTarget} not found`);
+
+console.log("-------------------------------------");
+// 36. *Chaining Methods:*
+//    - Q: Create a chain of array methods to find the average of all positive numbers in an array of mixed integers and return the result rounded to two decimal places.
+
+let mixedArray = [1,-2,45,-43,85,44,34,9,-5,-53,-34]
+
+let averageOfSum = mixedArray.filter(number => number > 0).reduce((sum,number,index,array) => {
+  sum += number;
+  return index === array.length - 1 ? sum / array.length : sum;
+},0).toFixed(2)
+
+console.log(`average of all positive numbers in an array of mixed integers is ${averageOfSum}`);
+console.log("-------------------------------------");
+
+// 37. *Conditional Filtering:*
+//    - Q: Implement a function that takes an array of objects with 'age' properties and returns an array of those who are adults (age 18 and above) using the filter method.
+let ageObj = [
+  {id:1, age:17},
+  {id:2, age:34},
+  {id:3, age:22},
+  {id:5, age:19}
+]
+
+let filterAge = function(obj){
+  return obj.filter(obj => obj.age >= 18);
+};
+let filteredAge = filterAge(ageObj);
+console.log(filteredAge);
+console.log("-------------------------------------");
+// 38. *Advanced Sorting:*
+//  - Q: Sort an array of strings based on their lengths in ascending order. If two strings have the same length, maintain their relative order in the sorted array.
+let mixedArrOfStr = ["banana", "apple","pomegranate","kiwi","avocado","orange"]
+let sortedArr = [...mixedArrOfStr].sort((a,b)=>{
+  let lengthCompare = a.length - b.length;
+  return lengthCompare !== 0 ? lengthCompare : mixedArrOfStr.indexOf(a) - mixedArrOfStr.indexOf(b);
+});
+console.log(sortedArr);
+console.log("-------------------------------------");
+
+// 39. *Nested Array Operations:*
+//    - Q: Given an array of arrays containing numbers, use a combination of array methods to flatten the structure and then calculate the sum of all the numbers.
+
+let arrOfArray = [[1,4],[5,6],[7,8,]]
+let flattenedAndSum = arrOfArray.reduce((flattened,currentValue)=> flattened.concat(currentValue),[]).reduce((sum,number) => sum + number,0)
+console.log(`sum of array is ${flattenedAndSum}`); 
+
+console.log("-------------------------------------");
+// 40. *Error Handling with Find:*
+//     - Q: Modify the find method to handle the scenario where the desired element is not found, returning a custom default object instead.
+
+let element = [26,38,46,37,56];
+let elementToTarget = 45;
+let fountElement = element.find(element => element === elementToTarget);
+let defaultObj = "Element not Found"
+let elementResult = fountElement || defaultObj;
+console.log(elementResult);
+
+console.log("-------------------------------------");
+
+// 41. *Map Method:*
+//- Q: How does the map method work in JavaScript, and can you provide an example of when you might use it to manipulate an array of objects?
+//  A: Map creates a new array by calling a function on each element in the array.
+//     It does not change the original array and it doesn't execute the function for empty elements.
+
+let person = [
+  {firstName:"Muddasir",lastName:"Jawed"},
+  {firstName:"saleem",lastName:"abbas"},
+  {firstName:"zubair",lastName:"nazeem"}
+]
+
+let mapMethod = person.map(personName => personName.firstName+" "+personName.lastName)
+console.log(mapMethod);
