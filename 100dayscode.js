@@ -554,3 +554,55 @@ let person = [
 
 let mapMethod = person.map(personName => personName.firstName+" "+personName.lastName)
 console.log(mapMethod);
+console.log("-------------------------------------");
+
+// 42. Filter Method:
+//- Q: Explain the purpose of the filter method.
+//     Provide an example where you use filter to extract elements from an array based on a specific condition.
+//  A: The filter is used to create a new array containing all elements that satisfy a given condition.
+//     It returns a new array with all matching elements.
+
+let numOfarr = [1,2,4,7,9,6]
+let filteredNum = numOfarr.filter(number => number >= 3)
+console.log(filteredNum);
+console.log("-------------------------------------");
+
+// 43. Sort Method:
+//    - Q: Discuss the default behavior of the sort method for strings and numbers. 
+//         How would you use a custom comparison function to sort an array of objects by a specific property?
+//      A: The sort method sorts the elements of an array as strings in alphabetical and ascending order
+//         and it overwrite the original array.
+
+// Default Behavior of sort() for Strings and Numbers:
+// -Strings
+let fruits = ['banana', 'apple', 'orange', 'grape'];
+fruits.sort();
+console.log(fruits);
+
+// -Numbers
+let arrOfSort = [10, 5, 20, 2];
+arrOfSort.sort();
+console.log(arrOfSort);
+
+// Using a Custom Comparison Function for Objects:
+let people = [
+  { id: 3, age: 30 },
+  { id: 6, age: 25 },
+  { id: 7, age: 35 }
+];
+
+people.sort(function(a, b) {
+  return a.age - b.age;
+});
+console.log(people);
+console.log("-------------------------------------");
+
+// 44. *Reduce Method:*
+//    - Q: Describe the purpose of the reduce method and provide an example where you use it to compute a single value
+//         from an array of numbers.
+//      A: is used to accumulate or combine elements of an array into a single value 
+//         it takes a callback function and a initial value and it runs on each element of an array.
+let arrOfReduce = [2,5,4,6,8,3] 
+let reduceMethod = arrOfReduce.reduce((acc,cur) =>{return acc + cur * cur}, 0)
+console.log(reduceMethod);
+console.log("-------------------------------------");
